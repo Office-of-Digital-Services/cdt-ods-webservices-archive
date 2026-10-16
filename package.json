@@ -1,7 +1,7 @@
 {
-  "name": "cdt-digital-id-strategy",
+  "name": "cdt-ods-webservices-archive",
   "version": "1.0.0",
-  "description": "Digital ID Strategy",
+  "description": "Governor Websites Archive",
   "scripts": {
     "start": "npx @11ty/eleventy --serve",
     "build": "npx @11ty/eleventy"
