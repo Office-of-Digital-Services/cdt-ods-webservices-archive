@@ -1,0 +1,42 @@
+<!-- Global Footer -->
+
+<footer class="cagov-footer">
+  <div>
+    <div>
+      <a href="https://www.ca.gov">
+        <span>CA.gov</span>
+        {% include "src/images/ca-gov-logo.svg" %}
+      </a>
+      <ul>
+        <li>
+          <a href="https://cdt.ca.gov/conditions-of-use/"
+            >{% if lang == "es" %}Condiciones de Uso{% else %}Conditions of
+            use{% endif %}</a
+          >
+        </li>
+        <li>
+          <a href="https://cdt.ca.gov/privacy-policy/"
+            >{% if lang == "es" %}Política de privacidad{% else %}Privacy
+            policy{% endif %}</a
+          >
+        </li>
+        <li>
+          <a href="https://cdt.ca.gov/accessibility/"
+            >{% if lang == "es" %}Accesibilidad{% else %}Accessibility{% endif
+            %}</a
+          >
+        </li>
+      </ul>
+      <div>
+        ©
+        <span id="thisyear">
+          <script>
+            document.getElementById('thisyear').appendChild(document.createTextNode(new Date().getFullYear()))
+          </script></span
+        >
+        {% if lang == "es" %} Estado de California {% else %} State of
+        California {% endif %}
+      </div>
+    </div>
+  </div>
+</footer>

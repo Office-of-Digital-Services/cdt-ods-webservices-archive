@@ -1,0 +1,133 @@
+catmplt-link-grid {
+  *,
+  *::before,
+  *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  & section {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: var(
+      --font-family-sans-serif,
+      "Public Sans",
+      system-ui,
+      -apple-system,
+      "Segoe UI",
+      Roboto,
+      "Helvetica Neue",
+      "Noto Sans",
+      sans-serif
+    );
+    color: var(--gray-900, #3b3a48);
+    position: relative;
+    line-height: 1.5;
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -0.75rem;
+    margin-left: -0.75rem;
+
+    /* Bootstrap-like column base */
+    > div {
+      position: relative;
+      width: 100%;
+      min-height: 1px;
+      padding-right: 0.75rem;
+      padding-left: 0.75rem;
+      margin-bottom: 1rem;
+
+      /* Link Grid card styles mapped to the current markup */
+      > a {
+        display: block;
+        border: 1px solid var(--border-color-default, #d4d4d7);
+        border-radius: 5px;
+        font-size: 1.4rem;
+        font-weight: 700;
+        padding: 1rem 2.25rem 1rem 1rem;
+        position: relative;
+        text-decoration: none !important;
+        height: 100%;
+        color: var(--link-grid-color, var(--color-p2, #046b99));
+        border-bottom: 4px solid
+          var(--link-grid-border-bottom-color, var(--color-p2, #046b99));
+
+        &:hover,
+        &:focus {
+          background: var(--link-grid-hover-bg, var(--gray-100, #f3f3f4));
+          color: var(--link-grid-hover-color, var(--color-p2-darker, #214a68));
+        }
+
+        &:focus {
+          outline: 2px solid var(--outline-default-color, #0b8ee5);
+        }
+
+        &::after {
+          position: absolute;
+          content: "";
+          display: inline-block;
+          text-decoration: none;
+          width: 0.55rem;
+          height: 0.55rem;
+          border-top: 2px solid var(--link-grid-color, var(--color-p2, #046b99));
+          border-left: 2px solid
+            var(--link-grid-color, var(--color-p2, #046b99));
+          vertical-align: middle;
+          top: 50%;
+          transform: translateY(-50%) rotate(135deg);
+          right: 1.5rem;
+          margin-left: 0.5rem;
+        }
+      }
+    }
+
+    /* Bootstrap md breakpoint equivalent */
+    @media (width >= 768px) {
+      /* 2 children -> col-md-6 */
+      &:not([data-columns]) > div:first-child:nth-last-child(2),
+      &:not([data-columns]) > div:first-child:nth-last-child(2) ~ div {
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+
+      /* 3 children -> col-md-4 */
+      &:not([data-columns]) > div:first-child:nth-last-child(3),
+      &:not([data-columns]) > div:first-child:nth-last-child(3) ~ div {
+        flex: 0 0 33.33333%;
+        max-width: 33.33333%;
+      }
+
+      /* 4 children -> col-md-3 */
+      &:not([data-columns]) > div:first-child:nth-last-child(4),
+      &:not([data-columns]) > div:first-child:nth-last-child(4) ~ div {
+        flex: 0 0 25%;
+        max-width: 25%;
+      }
+
+      /* 5+ children -> keep 4-column layout (col-md-3) */
+      &:not([data-columns]) > div:first-child:nth-last-child(n + 5),
+      &:not([data-columns]) > div:first-child:nth-last-child(n + 5) ~ div {
+        flex: 0 0 25%;
+        max-width: 25%;
+      }
+
+      /* Force column layout via data-columns on the grid wrapper */
+      &[data-columns="2"] > div {
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+
+      &[data-columns="3"] > div {
+        flex: 0 0 33.33333%;
+        max-width: 33.33333%;
+      }
+
+      &[data-columns="4"] > div {
+        flex: 0 0 25%;
+        max-width: 25%;
+      }
+    }
+  }
+}
