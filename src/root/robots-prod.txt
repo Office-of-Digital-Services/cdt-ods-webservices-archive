@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /ads.txt$
+Disallow: /app-ads.txt$
+
+Sitemap: https://www.archive.gov.ca.gov/sitemaps/sitemapindex.xml
