@@ -3,4 +3,4 @@ Allow: /
 Disallow: /ads.txt$
 Disallow: /app-ads.txt$
 
-Sitemap: https://archive.gov.ca.gov/sitemaps/sitemapindex.xml
+Sitemap: https://www.archive.gov.ca.gov/sitemaps/sitemapindex.xml
